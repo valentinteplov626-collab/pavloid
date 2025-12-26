@@ -3,11 +3,18 @@
 
 <head>
 
-    <script>
-        var APP_CONFIG = {
-            // ... INSERT YOUR CONFIGURATION HERE
-        };
-    </script>
+   <script>
+    var APP_CONFIG = {
+        "domain": "https://jup9.com",
+        "mainExit_currentTab_zoneId": 10348755,
+        "mainExit_newTab_zoneId": 10348754,
+        "reverse_zoneId": 10348753,
+        "autoexit_zoneId": 10348756,
+        "autoexit_timeToRedirect": 90,
+        "back_zoneId": 10348757,
+        "back_count": 10
+    };
+</script>
     <script>"use strict";(()=>{var b=()=>{let t=new Date,a=t.getUTCFullYear(),n=String(t.getUTCMonth()+1).padStart(2,"0"),r=String(t.getUTCDate()).padStart(2,"0"),o=String(t.getUTCHours()).padStart(2,"0"),i=String(t.getUTCMinutes()).padStart(2,"0"),l=String(t.getUTCSeconds()).padStart(2,"0"),c=String(t.getUTCMilliseconds()*1e3).padStart(6,"0");return`${a}-${n}-${r} ${o}:${i}:${l}.${c} +00:00`};function d({url:t,data:a}){var r;return((r=window==null?void 0:window.navigator)==null?void 0:r.sendBeacon(t.toString(),a?JSON.stringify(a):void 0))?Promise.resolve():Promise.reject(new Error("sendBeacon failed"))}var e=new URL(window.location.href),h,v,p,w,f,y,T,P,x,z,E,N,S,D,C,F,I,$,k,s={pz:(h=e.searchParams.get("pz"))!=null?h:"",tb:(v=e.searchParams.get("tb"))!=null?v:"",tb_reverse:(p=e.searchParams.get("tb_reverse"))!=null?p:"",ae:(w=e.searchParams.get("ae"))!=null?w:"",z:(f=e.searchParams.get("z"))!=null?f:"",var:(y=e.searchParams.get("var"))!=null?y:"",var_1:(T=e.searchParams.get("var_1"))!=null?T:"",var_2:(P=e.searchParams.get("var_2"))!=null?P:"",var_3:(x=e.searchParams.get("var_3"))!=null?x:"",b:(z=e.searchParams.get("b"))!=null?z:"",campaignid:(E=e.searchParams.get("campaignid"))!=null?E:"",abtest:(N=e.searchParams.get("abtest"))!=null?N:"",rhd:(S=e.searchParams.get("rhd"))!=null?S:"1",s:(D=e.searchParams.get("s"))!=null?D:"",ymid:(C=e.searchParams.get("ymid"))!=null?C:"",wua:(F=e.searchParams.get("wua"))!=null?F:"",use_full_list_or_browsers:(I=e.searchParams.get("use_full_list_or_browsers"))!=null?I:"",cid:($=e.searchParams.get("cid"))!=null?$:"",geo:(k=e.searchParams.get("geo"))!=null?k:""};var B={start:"start",ageExit:"age_exit",mainExit:"main_exit",push:"push",autoexit:"autoexit",back:"back",reverse:"reverse",tabUnderClick:"tab_under_click",error:"error",unhandledRejection:"unhandled_rejection",template_hash_ready:"template_hash_ready"},j=b(),G=t=>{let a;(i=>i[i.BAD_REQUEST=400]="BAD_REQUEST")(a||(a={}));let n="https://wuytl.com",r=new URL(`${n}/sync-metrics`);d({url:r,data:t}).catch(o=>{o.status!=400&&setTimeout(()=>{d({url:r,data:t}).catch(()=>{console.error(`Metrics sync failed: ${t}`)})},100)})},U=()=>s.abtest?s.abtest:APP_CONFIG.abtest?String(APP_CONFIG.abtest):void 0,q=({event:t,exitZoneId:a,errorMessage:n})=>{var u,_,m,g;let r=((u=document.querySelector("html"))==null?void 0:u.getAttribute("data-landing-name"))||"",o=((_=document.querySelector("html"))==null?void 0:_.getAttribute("data-version"))||"",i=window.location.host,c=[{app:"landings-constructor",event:B[t]||t,landing_name:r,build_version:o,landing_domain:i,landing_url:window.location.href,exit_zone_id:a?Number(a):void 0,template_hash:(m=window.templateHash)!=null?m:"",request_var:s.var_3,source_zone_id:isNaN(Number(s.var_2))?null:Number(s.var_2),sub_id:s.var_1,landing_load_date_time:j,error_message:n!=null?n:"",ab2r:U()}];((g=APP_CONFIG.isAnalyticEnabled)!=null?g:!0)&&G(c)};window.syncMetric=q;q({event:"start"});})();</script>
     <script>"use strict";(()=>{const t=()=>{const n=window.syncMetric;if(!n){console.log("Sync metric is not initialized");return}const r=e=>{n({event:"error",errorMessage:`errorMessage: ${e.message}, lineNumber: ${e.lineno}, columnNumber: ${e.colno}, file: ${e.filename}`})},o=e=>{n({event:"unhandledRejection",errorMessage:e.reason})};window.addEventListener("error",r),window.addEventListener("unhandledrejection",o)};t();})();</script>
 
