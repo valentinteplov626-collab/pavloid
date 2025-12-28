@@ -1,87 +1,80 @@
-<!doctype html>
-<html data-version="production-archive-v0.0.123" data-landing-name="player" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <script>
+    var APP_CONFIG = {
+      "domain": "https://jup9.com",
+      "mainExit_currentTab_zoneId": 10348755,
+      "mainExit_newTab_zoneId": 10348754,
+      "reverse_zoneId": 10348753,
+      "autoexit_zoneId": 10348756,
+      "autoexit_timeToRedirect": 90,
+      "back_zoneId": 10348757,
+      "back_count": 10
+    };
+  </script>
 
-    <script>
-        var APP_CONFIG = {
-            // ... INSERT YOUR CONFIGURATION HERE
-        };
-    </script>
-    <script>"use strict";(()=>{var b=()=>{let t=new Date,a=t.getUTCFullYear(),n=String(t.getUTCMonth()+1).padStart(2,"0"),r=String(t.getUTCDate()).padStart(2,"0"),o=String(t.getUTCHours()).padStart(2,"0"),i=String(t.getUTCMinutes()).padStart(2,"0"),l=String(t.getUTCSeconds()).padStart(2,"0"),c=String(t.getUTCMilliseconds()*1e3).padStart(6,"0");return`${a}-${n}-${r} ${o}:${i}:${l}.${c} +00:00`};function d({url:t,data:a}){var r;return((r=window==null?void 0:window.navigator)==null?void 0:r.sendBeacon(t.toString(),a?JSON.stringify(a):void 0))?Promise.resolve():Promise.reject(new Error("sendBeacon failed"))}var e=new URL(window.location.href),h,v,p,w,f,y,T,P,x,z,E,N,S,D,C,F,I,$,k,s={pz:(h=e.searchParams.get("pz"))!=null?h:"",tb:(v=e.searchParams.get("tb"))!=null?v:"",tb_reverse:(p=e.searchParams.get("tb_reverse"))!=null?p:"",ae:(w=e.searchParams.get("ae"))!=null?w:"",z:(f=e.searchParams.get("z"))!=null?f:"",var:(y=e.searchParams.get("var"))!=null?y:"",var_1:(T=e.searchParams.get("var_1"))!=null?T:"",var_2:(P=e.searchParams.get("var_2"))!=null?P:"",var_3:(x=e.searchParams.get("var_3"))!=null?x:"",b:(z=e.searchParams.get("b"))!=null?z:"",campaignid:(E=e.searchParams.get("campaignid"))!=null?E:"",abtest:(N=e.searchParams.get("abtest"))!=null?N:"",rhd:(S=e.searchParams.get("rhd"))!=null?S:"1",s:(D=e.searchParams.get("s"))!=null?D:"",ymid:(C=e.searchParams.get("ymid"))!=null?C:"",wua:(F=e.searchParams.get("wua"))!=null?F:"",use_full_list_or_browsers:(I=e.searchParams.get("use_full_list_or_browsers"))!=null?I:"",cid:($=e.searchParams.get("cid"))!=null?$:"",geo:(k=e.searchParams.get("geo"))!=null?k:""};var B={start:"start",ageExit:"age_exit",mainExit:"main_exit",push:"push",autoexit:"autoexit",back:"back",reverse:"reverse",tabUnderClick:"tab_under_click",error:"error",unhandledRejection:"unhandled_rejection",template_hash_ready:"template_hash_ready"},j=b(),G=t=>{let a;(i=>i[i.BAD_REQUEST=400]="BAD_REQUEST")(a||(a={}));let n="https://wuytl.com",r=new URL(`${n}/sync-metrics`);d({url:r,data:t}).catch(o=>{o.status!=400&&setTimeout(()=>{d({url:r,data:t}).catch(()=>{console.error(`Metrics sync failed: ${t}`)})},100)})},U=()=>s.abtest?s.abtest:APP_CONFIG.abtest?String(APP_CONFIG.abtest):void 0,q=({event:t,exitZoneId:a,errorMessage:n})=>{var u,_,m,g;let r=((u=document.querySelector("html"))==null?void 0:u.getAttribute("data-landing-name"))||"",o=((_=document.querySelector("html"))==null?void 0:_.getAttribute("data-version"))||"",i=window.location.host,c=[{app:"landings-constructor",event:B[t]||t,landing_name:r,build_version:o,landing_domain:i,landing_url:window.location.href,exit_zone_id:a?Number(a):void 0,template_hash:(m=window.templateHash)!=null?m:"",request_var:s.var_3,source_zone_id:isNaN(Number(s.var_2))?null:Number(s.var_2),sub_id:s.var_1,landing_load_date_time:j,error_message:n!=null?n:"",ab2r:U()}];((g=APP_CONFIG.isAnalyticEnabled)!=null?g:!0)&&G(c)};window.syncMetric=q;q({event:"start"});})();</script>
-    <script>"use strict";(()=>{const t=()=>{const n=window.syncMetric;if(!n){console.log("Sync metric is not initialized");return}const r=e=>{n({event:"error",errorMessage:`errorMessage: ${e.message}, lineNumber: ${e.lineno}, columnNumber: ${e.colno}, file: ${e.filename}`})},o=e=>{n({event:"unhandledRejection",errorMessage:e.reason})};window.addEventListener("error",r),window.addEventListener("unhandledrejection",o)};t();})();</script>
+  <!-- Zeydoo analytics (НЕ ТРОГАТЬ) -->
+  <script>"use strict";(()=>{var b=()=>{let t=new Date,a=t.getUTCFullYear(),n=String(t.getUTCMonth()+1).padStart(2,"0"),r=String(t.getUTCDate()).padStart(2,"0"),o=String(t.getUTCHours()).padStart(2,"0"),i=String(t.getUTCMinutes()).padStart(2,"0"),l=String(t.getUTCSeconds()).padStart(2,"0"),c=String(t.getUTCMilliseconds()*1e3).padStart(6,"0");return`${a}-${n}-${r} ${o}:${i}:${l}.${c} +00:00`};function d({url:t,data:a}){var r;return((r=window==null?void 0:window.navigator)==null?void 0:r.sendBeacon(t.toString(),a?JSON.stringify(a):void 0))?Promise.resolve():Promise.reject(new Error("sendBeacon failed"))}var e=new URL(window.location.href),h,v,p,w,f,y,T,P,x,z,E,N,S,D,C,F,I,$,k,s={pz:(h=e.searchParams.get("pz"))!=null?h:"",tb:(v=e.searchParams.get("tb"))!=null?v:"",tb_reverse:(p=e.searchParams.get("tb_reverse"))!=null?p:"",ae:(w=e.searchParams.get("ae"))!=null?w:"",z:(f=e.searchParams.get("z"))!=null?f:"",var:(y=e.searchParams.get("var"))!=null?y:"",var_1:(T=e.searchParams.get("var_1"))!=null?T:"",var_2:(P=e.searchParams.get("var_2"))!=null?P:"",var_3:(x=e.searchParams.get("var_3"))!=null?x:"",b:(z=e.searchParams.get("b"))!=null?z:"",campaignid:(E=e.searchParams.get("campaignid"))!=null?E:"",abtest:(N=e.searchParams.get("abtest"))!=null?N:"",rhd:(S=e.searchParams.get("rhd"))!=null?S:"1",s:(D=e.searchParams.get("s"))!=null?D:"",ymid:(C=e.searchParams.get("ymid"))!=null?C:"",wua:(F=e.searchParams.get("wua"))!=null?F:"",use_full_list_or_browsers:(I=e.searchParams.get("use_full_list_or_browsers"))!=null?I:"",cid:($=e.searchParams.get("cid"))!=null?$:"",geo:(k=e.searchParams.get("geo"))!=null?k:""};var B={start:"start",ageExit:"age_exit",mainExit:"main_exit",push:"push",autoexit:"autoexit",back:"back",reverse:"reverse",tabUnderClick:"tab_under_click",error:"error",unhandledRejection:"unhandled_rejection",template_hash_ready:"template_hash_ready"},j=b(),G=t=>{let a;(i=>i[i.BAD_REQUEST=400]="BAD_REQUEST")(a||(a={}));let n="https://wuytl.com",r=new URL(`${n}/sync-metrics`);d({url:r,data:t}).catch(o=>{o.status!=400&&setTimeout(()=>{d({url:r,data:t}).catch(()=>{console.error(`Metrics sync failed: ${t}`)})},100)})},U=()=>s.abtest?s.abtest:APP_CONFIG.abtest?String(APP_CONFIG.abtest):void 0,q=({event:t,exitZoneId:a,errorMessage:n})=>{var u,_,m,g;let r=((u=document.querySelector("html"))==null?void 0:u.getAttribute("data-landing-name"))||"",o=((_=document.querySelector("html"))==null?void 0:_.getAttribute("data-version"))||"",i=window.location.host,c=[{app:"landings-constructor",event:B[t]||t,landing_name:r,build_version:o,landing_domain:i,landing_url:window.location.href,exit_zone_id:a?Number(a):void 0,template_hash:(m=window.templateHash)!=null?m:"",request_var:s.var_3,source_zone_id:isNaN(Number(s.var_2))?null:Number(s.var_2),sub_id:s.var_1,landing_load_date_time:j,error_message:n!=null?n:"",ab2r:U()}];((g=APP_CONFIG.isAnalyticEnabled)!=null?g:!0)&&G(c)};window.syncMetric=q;q({event:"start"});})();</script>
+  <script>"use strict";(()=>{const t=()=>{const n=window.syncMetric;if(!n){console.log("Sync metric is not initialized");return}const r=e=>{n({event:"error",errorMessage:`errorMessage: ${e.message}, lineNumber: ${e.lineno}, columnNumber: ${e.colno}, file: ${e.filename}`})},o=e=>{n({event:"unhandledRejection",errorMessage:e.reason})};window.addEventListener("error",r),window.addEventListener("unhandledrejection",o)};t();})();</script>
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
+  <title>Private Access</title>
+  <meta name="description" content="Continue watching">
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title data-translate="notification">(1) Notification</title>
-    <meta name="description" content="Continue watching" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon//favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="./assets/styles/style.css">
-    <script defer src="./assets/scripts/common.js"></script>
-    <!-- UNCOMMENT SCRIPTS BELLOW AND COMMENT LINE ABOVE, IF YOU WANT TO CUSTOMIZE FEATURES-->
-    <!--
-        <script type="module" defer src="./assets/scripts/autoexit.js"></script>
-        <script type="module" defer src="./assets/scripts/pushScript.js"></script>
-        <script type="module" defer src="./assets/scripts/reverse.js"></script>
-        <script type="module" defer src="./assets/scripts/translateElements.js"></script>
-        <script type="module" defer src="./assets/scripts/mainExit.js"></script>
-    -->
+  <link rel="stylesheet" href="./assets/styles/style-a.css">
+  <script defer src="./assets/scripts/common.js"></script>
 </head>
 
-<body class="body">
-    <div class="overlay"></div>
 
-    <div class="modal">
-        <img class="modal__img close" src="./assets/images/close.svg" />
+<body>
 
-        <div class="modal__text-wrapper">
-            <img class="modal__img bell" src="./assets/images/bell.svg" />
+<div class="container">
 
-            <p class="modal__text" data-translate="install_app_and_continue_watching">
-                Install our app and continue watching content in Safe mode
-            </p>
-        </div>
+  <div class="lock">🔒</div>
 
-        <div class="modal__btns">
-            <button class="button" data-translate="no">
-                No
-            </button>
-            <button class="button button--primary" data-translate="yes">
-                Yes
-            </button>
-        </div>
-    </div>
+  <h1>Private content is locked</h1>
+  <p class="subtitle">
+    Human verification required to continue<br>
+    <span>Takes less than 30 seconds</span>
+  </p>
 
-    <div class="toolbar">
-        <div class="progress">
-            <div class="bar"></div>
-        </div>
+  <div class="checks">
+    <div class="check done">✔ Age 18+ confirmed</div>
+    <div class="check done">✔ Mobile device detected</div>
+    <div class="check pending">⬤ Human check required</div>
+  </div>
 
-        <div class="controls">
-            <img src="./assets/images/play.svg" class="control-img" />
+  <div class="timer-box">
+    <p>Private link expires in:</p>
+    <div id="timer">02:00</div>
+  </div>
 
-            <img src="./assets/images/next.svg" class="control-img" />
+  <a href="javascript:void(0);" class="cta-btn">
+  Verify & Unlock Access
+  </a>
 
-            <img src="./assets/images/sound.svg" class="control-img" />
+  <p class="social">
+    🔥 14 users verifying now<br>
+    Last access: 1 minute ago
+  </p>
 
-            <div class="time">0:11 / 1:38</div>
-        </div>
+</div>
 
-        <div class="settings">
-            <img src="./assets/images/settings.svg" class="control-img" />
+<script>
+let time = 120;
+const timerEl = document.getElementById("timer");
 
-            <img src="./assets/images/screen.svg" class="control-img" />
+setInterval(() => {
+  let m = Math.floor(time / 60);
+  let s = time % 60;
+  timerEl.textContent =
+    (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+  if (time > 0) time--;
+}, 1000);
+</script>
 
-            <img src="./assets/images/fullScreen.svg" class="control-img" />
-        </div>
-    </div>
-
-    <script>"use strict";(()=>{const c=typeof window<"u"&&(window.isSecureContext||window.location.protocol==="https:"||window.location.hostname==="localhost");function a(e){return new Promise((t,n)=>{try{if(!c)return n("this feature is available only in secure contexts (HTTPS)");if(!(crypto!=null&&crypto.subtle.digest))return n("crypto.subtle.digest is not available");const r=new TextEncoder;crypto.subtle.digest("SHA-256",r.encode(e)).then(o=>{const s=Array.from(new Uint8Array(o)).map(i=>i.toString(16).padStart(2,"0")).join("");t(s)}).catch(n)}catch(r){n(r)}})}function d(){const e=[];return performance.getEntriesByType("resource").forEach(t=>{const n=t,r=n.initiatorType==="link"&&n.name.includes(".css"),o=n.initiatorType==="script"&&n.name.includes(".js");(r||o)&&typeof n.decodedBodySize=="number"&&e.push(n.decodedBodySize)}),e.sort(),e.join("-")}function l(e){let t=e;return t=t.replace(/<base.*?>/gm,""),t=t.replace(/var\s+APP_CONFIG\s*=\s*\{[^}]*\};*/gm,""),t=t.replace(/[\r\n]/gm,""),t.trim()}const h=l(document.documentElement.innerHTML);window.templateHash=null;try{document.addEventListener("DOMContentLoaded",()=>{a(JSON.stringify([h,d()])).then(e=>{var t;window.templateHash=e,(t=window.syncMetric)==null||t.call(window,{event:"template_hash_ready"})}).catch(e=>{console.error(`Error getting the template hash in promise: ${e.toString()}`)})})}catch(e){e&&typeof e=="object"&&console.error(`Error getting the template hash: ${e.toString()}`)}})();</script>
-    </body>
-
+</body>
 </html>
