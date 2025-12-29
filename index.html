@@ -13,409 +13,68 @@
       "back_count": 10
     };
   </script>
-  
-  <!-- Система автоматической локализации -->
-  <script>
-    // Словари переводов для разных языков с мета-данными
-    const translations = {
-      "en": {
-        "page_title": "Private Access",
-        "page_description": "Continue watching",
-        "title": "Private content is locked",
-        "subtitle": "Human verification required to continue",
-        "subtitle_span": "Takes less than 30 seconds",
-        "check1": "✔ Age 18+ confirmed",
-        "check2": "✔ Mobile device detected",
-        "check3": "⬤ Human check required",
-        "timer_text": "Private link expires in:",
-        "cta": "Verify & Unlock Access",
-        "social": "🔥 14 users verifying now<br>Last access: 1 minute ago"
-      },
-      
-      // Азиатские языки
-      "bn": { // Бенгальский (Бангладеш)
-        "page_title": "প্রাইভেট অ্যাক্সেস",
-        "page_description": "দেখা চালিয়ে যান",
-        "title": "ব্যক্তিগত বিষয়বস্তু লক করা আছে",
-        "subtitle": "চালিয়ে যেতে মানুষের যাচাই প্রয়োজন",
-        "subtitle_span": "৩০ সেকেন্ডেরও কম সময় লাগে",
-        "check1": "✔ ১৮+ বয়স নিশ্চিত হয়েছে",
-        "check2": "✔ মোবাইল ডিভাইস শনাক্ত হয়েছে",
-        "check3": "⬤ মানুষের যাচাই প্রয়োজন",
-        "timer_text": "ব্যক্তিগত লিঙ্ক মেয়াদ শেষ হয়:",
-        "cta": "যাচাই করুন এবং অ্যাক্সেস আনলক করুন",
-        "social": "🔥 ১৪ জন ব্যবহারকারী এখন যাচাই করছে<br>শেষ অ্যাক্সেস: ১ মিনিট আগে"
-      },
-      
-      "si": { // Сингальский (Шри-Ланка)
-        "page_title": "පෞද්ගලික ප්‍රවේශය",
-        "page_description": "දිගටම නරඹන්න",
-        "title": "පෞද්ගලික අන්තර්ගතය අගුළු දමා ඇත",
-        "subtitle": "ඉදිරියට යාමට මානව සත්‍යාපනය අවශ්‍යය",
-        "subtitle_span": "තත්පර 30 ට අඩු කාලයක් ගතවේ",
-        "check1": "✔ වයස 18+ තහවුරු කර ඇත",
-        "check2": "✔ ජංගම උපාංග හඳුනාගෙන ඇත",
-        "check3": "⬤ මානව පරීක්ෂණය අවශ්‍යය",
-        "timer_text": "පෞද්ගලික සබැඳිය කල් ඉකුත් වන්නේ:",
-        "cta": "සත්‍යාපනය කර ප්‍රවේශය අගුළු හරින්න",
-        "social": "🔥 පරිශීලකයින් 14 දෙනෙක් දැන් සත්‍යාපනය කරයි<br>අවසන් ප්‍රවේශය: මිනිත්තුවකට පෙර"
-      },
-      
-      "ur": { // Урду (Пакистан)
-        "page_title": "پرائیویٹ رسائی",
-        "page_description": "دیکھتے رہیں",
-        "title": "نجی مواد مقفل ہے",
-        "subtitle": "جاری رکھنے کے لیے انسانی تصدیق ضروری ہے",
-        "subtitle_span": "30 سیکنڈ سے کم وقت لگتا ہے",
-        "check1": "✔ عمر 18+ کی تصدیق ہوگئی",
-        "check2": "✔ موبائل ڈیوائس کا پتہ چلا",
-        "check3": "⬤ انسانی چیک ضروری ہے",
-        "timer_text": "نجی لنک میعاد ختم ہوتی ہے:",
-        "cta": "تصدیق کریں اور رسائی کھولیں",
-        "social": "🔥 14 صارفین اب تصدیق کر رہے ہیں<br>آخری رسائی: 1 منٹ پہلے"
-      },
-      
-      "hi": { // Хинди (Индия)
-        "page_title": "निजी पहुंच",
-        "page_description": "देखना जारी रखें",
-        "title": "निजी सामग्री लॉक है",
-        "subtitle": "जारी रखने के लिए मानव सत्यापन आवश्यक है",
-        "subtitle_span": "30 सेकंड से कम समय लेता है",
-        "check1": "✔ 18+ आयु पुष्टि हुई",
-        "check2": "✔ मोबाइल डिवाइस का पता चला",
-        "check3": "⬤ मानव जांच आवश्यक",
-        "timer_text": "निजी लिंक समाप्त होता है:",
-        "cta": "सत्यापित करें और पहुंच अनलॉक करें",
-        "social": "🔥 14 उपयोगकर्ता अभी सत्यापित कर रहे हैं<br>अंतिम पहुंच: 1 मिनट पहले"
-      },
-      
-      // Африканские языки
-      "sw": { // Суахили (Кения, Танзания, Уганда)
-        "page_title": "Ufikiaji wa Kibinafsi",
-        "page_description": "Endelea kutazama",
-        "title": "Maudhui ya Kibinafsi Imefungwa",
-        "subtitle": "Uthibitishaji wa kibinadamu unahitajika kuendelea",
-        "subtitle_span": "Inachukua chini ya sekunde 30",
-        "check1": "✔ Umri 18+ umehakikishiwa",
-        "check2": "✔ Kifaa cha rununu kimegunduliwa",
-        "check3": "⬤ Ukaguzi wa kibinadamu unahitajika",
-        "timer_text": "Kiunga cha kibinafsi kinaisha:",
-        "cta": "Thibitisha na Fungua Ufikiaji",
-        "social": "🔥 Watumiaji 14 wanathibitisha sasa<br>Ufikiaji wa mwisho: dakika 1 iliyopita"
-      },
-      
-      "ha": { // Хауса (Нигерия, Гана, Нигер)
-        "page_title": "Samun dama na sirri",
-        "page_description": "Ci gaba da kallo",
-        "title": "Abun ciki na sirri an kulle",
-        "subtitle": "Ana buƙatar tabbatar da ɗan adam don ci gaba",
-        "subtitle_span": "Yana ɗaukar ƙasa da daƙiƙa 30",
-        "check1": "✔ Shekaru 18+ an tabbatar",
-        "check2": "✔ An gano na'urar wayar hannu",
-        "check3": "⬤ Ana buƙatar duban ɗan adam",
-        "timer_text": "Mahaɗin sirri yana ƙarewa a:",
-        "cta": "Tabbatar da & Buɗe Samun dama",
-        "social": "🔥 Masu amfani 14 suna tabbatarwa yanzu<br>Samuwar ƙarshe: minti 1 da suka wuce"
-      },
-      
-      "yo": { // Йоруба (Нигерия, Бенин)
-        "page_title": "Wiwọle Aalaroko",
-        "page_description": "Tẹsiwaju lati wo",
-        "title": "A ti ṣii akojọ alaroko",
-        "subtitle": "A nilo idaniloju eniyan lati tẹsiwaju",
-        "subtitle_span": "Gba diẹ sii ju aaya 30 kọ",
-        "check1": "✔ Awọn ọdun 18+ ti jẹrisi",
-        "check2": "✔ Ẹrọ alagbeka ti ṣe akiyesi",
-        "check3": "⬤ Idanwo eniyan nilo",
-        "timer_text": "Ọna asopọ alaroko n pari ni:",
-        "cta": "Jẹrisi & Ṣii Wiwọle",
-        "social": "🔥 Awọn olumulo 14 n jẹrisi bayi<br>Wiwọle ti o kẹhin: iṣẹju 1 sẹhin"
-      },
-      
-      "ig": { // Игбо (Нигерия)
-        "page_title": "Ịnweta Onwe",
-        "page_description": "Gaa n'ihu na-ekiri",
-        "title": "Emechiri ihe nzuzo",
-        "subtitle": "Achọrọ nyocha mmadụ iji gaa n'ihu",
-        "subtitle_span": "Na-ewe ihe na-erughị sekọnd 30",
-        "check1": "✔ Afọ 18+ ekwenyela",
-        "check2": "✔ Achọpụtala ngwaọrụ mkpanaka",
-        "check3": "⬤ Achọrọ nyocha mmadụ",
-        "timer_text": "Njikọ nzuzo agwụ na:",
-        "cta": "Nyochaa & Kpọghee Ịnweta",
-        "social": "🔥 Ndị ọrụ 14 na-enyocha ugbu a<br>Ịnweta ikpeazụ: nkeji 1 gara aga"
-      },
-      
-      "am": { // Амхарский (Эфиопия)
-        "page_title": "የግል መዳረሻ",
-        "page_description": "ማየት ይቀጥሉ",
-        "title": "የግል ይዘት ተቆልፏል",
-        "subtitle": "ለመቀጠል የሰው ማረጋገጫ ያስፈልጋል",
-        "subtitle_span": "ከ30 ሰከንድ ያነሰ ጊዜ ይወስዳል",
-        "check1": "✔ ዕድሜ 18+ ተረጋግጧል",
-        "check2": "✔ የሞባይል መሣሪያ ተገኝቷል",
-        "check3": "⬤ የሰው ቁጥጥር ያስፈልጋል",
-        "timer_text": "የግል አገናኝ በ: ያበቃል",
-        "cta": "አረጋግጥ እና መዳረሻ ክፈት",
-        "social": "🔥 14 ተጠቃሚዎች አሁን እያረጋገጡ ነው<br>የመጨረሻ መዳረሻ: ከ1 ደቂቃ በፊት"
-      },
-      
-      "zu": { // Зулу (ЮАР)
-        "page_title": "Ukufinyelela Okuyimfihlo",
-        "page_description": "Qhubeka ubuke",
-        "title": "Okuqukethwe okuyimfihlo kuvaliwe",
-        "subtitle": "Kudingeka ukuqinisekiswa komuntu ukuze uqhubeke",
-        "subtitle_span": "Kuthatha imizuzwana engaphansi kwama-30",
-        "check1": "✔ Iminyaka engu-18+ iqinisekisiwe",
-        "check2": "✔ Idivayisi yeselula itholakale",
-        "check3": "⬤ Kudingeka ukuhlolwa komuntu",
-        "timer_text": "Isixhumanisi esiyimfihlo siphela:",
-        "cta": "Qinisekisa & Vula Ukufinyelela",
-        "social": "🔥 Abasebenzisi abangu-14 bayaqinisekisa manje<br>Ukufinyelela kokugcina: imizuzu eyodwa edlule"
-      },
-      
-      "xh": { // Коса (ЮАР)
-        "page_title": "Ukufikelela Okuyimfihlo",
-        "page_description": "Qhubeka ubuke",
-        "title": "Umxholo oyimfihlo uvaliwe",
-        "subtitle": "Kufuneka uqinisekiso lomntu ukuze uqhubeke",
-        "subtitle_span": "Ithatha imizuzwana engaphantsi kwee-30",
-        "check1": "✔ Iminyaka eyi-18+ iqinisekisiwe",
-        "check2": "✔ Ifowuni ekhutshwayo ifunyenwe",
-        "check3": "⬤ Kufuneka uhlolo lomntu",
-        "timer_text": "Ikhonkco eliyimfihlo liphela:",
-        "cta": "Qinisekisa & Vula Ukufikelela",
-        "social": "🔥 Abasebenzisi abali-14 bayaqinisekisa ngoku<br>Ukufikelela kokugqibela: imizuzu eyi-1 eyadlulayo"
-      },
-      
-      "fr": { // Французский (Франкоязычная Африка)
-        "page_title": "Accès Privé",
-        "page_description": "Continuer à regarder",
-        "title": "Contenu privé verrouillé",
-        "subtitle": "Vérification humaine requise pour continuer",
-        "subtitle_span": "Prend moins de 30 secondes",
-        "check1": "✔ Âge 18+ confirmé",
-        "check2": "✔ Appareil mobile détecté",
-        "check3": "⬤ Vérification humaine requise",
-        "timer_text": "Lien privé expire dans :",
-        "cta": "Vérifier et déverrouiller l'accès",
-        "social": "🔥 14 utilisateurs vérifient maintenant<br>Dernier accès : il y a 1 minute"
-      },
-      
-      "pt": { // Португальский (Ангола, Мозамбик)
-        "page_title": "Acesso Privado",
-        "page_description": "Continuar assistindo",
-        "title": "Conteúdo privado está bloqueado",
-        "subtitle": "Verificação humana necessária para continuar",
-        "subtitle_span": "Leva menos de 30 segundos",
-        "check1": "✔ Idade 18+ confirmada",
-        "check2": "✔ Dispositivo móvel detectado",
-        "check3": "⬤ Verificação humana necessária",
-        "timer_text": "Link privado expira em:",
-        "cta": "Verificar e Desbloquear Acesso",
-        "social": "🔥 14 usuários verificando agora<br>Último acesso: 1 minuto atrás"
-      },
-      
-      "ar": { // Арабский (Египет, Марокко, Тунис)
-        "page_title": "وصول خاص",
-        "page_description": "متابعة المشاهدة",
-        "title": "المحتوى الخاص مقفل",
-        "subtitle": "مطلوب التحقق البشري للمتابعة",
-        "subtitle_span": "يستغرق أقل من 30 ثانية",
-        "check1": "✔ تم تأكيد العمر 18+",
-        "check2": "✔ تم اكتشاف جهاز محمول",
-        "check3": "⬤ مطلوب فحص بشري",
-        "timer_text": "الرابط الخاص ينتهي في:",
-        "cta": "تحقق وفك قفل الوصول",
-        "social": "🔥 14 مستخدمًا يتحققون الآن<br>آخر وصول: منذ دقيقة"
-      }
-    };
 
-    // Определение языка по гео из URL или браузера
-    function getLanguageByGeo(geo) {
-      const geoToLang = {
-        // Азия
-        'BD': 'bn',      // Бангладеш
-        'LK': 'si',      // Шри-Ланка
-        'PK': 'ur',      // Пакистан
-        'IN': 'hi',      // Индия
-        'ID': 'id',      // Индонезия
-        'VN': 'vi',      // Вьетнам
-        'TH': 'th',      // Таиланд
-        'PH': 'tl',      // Филиппины
-        
-        // Африка
-        'KE': 'sw',      // Кения
-        'TZ': 'sw',      // Танзания
-        'UG': 'sw',      // Уганда
-        'NG': 'ha',      // Нигерия (Хауса)
-        'GH': 'ha',      // Гана
-        'NE': 'ha',      // Нигер
-        'ET': 'am',      // Эфиопия
-        'ZA': 'zu',      // ЮАР (Зулу)
-        'EG': 'ar',      // Египет
-        'MA': 'ar',      // Марокко
-        'TN': 'ar',      // Тунис
-        'DZ': 'ar',      // Алжир
-        'AO': 'pt',      // Ангола
-        'MZ': 'pt',      // Мозамбик
-        'SN': 'fr',      // Сенегал
-        'CI': 'fr',      // Кот-д'Ивуар
-        'CM': 'fr',      // Камерун
-        'CD': 'fr',      // ДР Конго
-        'MG': 'fr',      // Мадагаскар
-        'RW': 'fr',      // Руанда
-        'BJ': 'fr',      // Бенин
-        'BF': 'fr',      // Буркина-Фасо
-        'ML': 'fr',      // Мали
-        'GN': 'fr',      // Гвинея
-        'TD': 'fr',      // Чад
-        'CF': 'fr'       // ЦАР
-      };
-      
-      // Сначала пытаемся определить по гео
-      const geoUpper = geo ? geo.toUpperCase() : '';
-      if (geoUpper && geoToLang[geoUpper]) {
-        return geoToLang[geoUpper];
-      }
-      
-      // Потом проверяем языки браузера
-      const browserLangs = navigator.languages || [navigator.language || 'en'];
-      for (let browserLang of browserLangs) {
-        const langCode = browserLang.split('-')[0];
-        if (translations[langCode]) {
-          return langCode;
-        }
-      }
-      
-      return 'en'; // Английский по умолчанию
-    }
-
-    // Получаем гео из URL (параметр geo)
-    function getGeoFromURL() {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get('geo') || '';
-    }
-
-    // Применяем перевод
-    function applyTranslation(langCode) {
-      const lang = translations[langCode] || translations['en'];
-      
-      // Основной контент
-      const h1 = document.querySelector('h1');
-      const subtitle = document.querySelector('.subtitle');
-      const checks = document.querySelectorAll('.check');
-      const timerText = document.querySelector('.timer-box p');
-      const ctaBtn = document.querySelector('.cta-btn');
-      const social = document.querySelector('.social');
-      
-      if (h1) h1.textContent = lang.title;
-      if (subtitle) subtitle.innerHTML = lang.subtitle + '<br><span>' + lang.subtitle_span + '</span>';
-      if (checks[0]) checks[0].textContent = lang.check1;
-      if (checks[1]) checks[1].textContent = lang.check2;
-      if (checks[2]) checks[2].textContent = lang.check3;
-      if (timerText) timerText.textContent = lang.timer_text;
-      if (ctaBtn) ctaBtn.textContent = lang.cta;
-      if (social) social.innerHTML = lang.social;
-      
-      // Мета-данные
-      document.title = lang.page_title || translations['en'].page_title;
-      
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc && lang.page_description) {
-        metaDesc.content = lang.page_description;
-      }
-      
-      // Open Graph метатеги (если есть)
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogTitle && lang.page_title) ogTitle.content = lang.page_title;
-      if (ogDesc && lang.page_description) ogDesc.content = lang.page_description;
-      
-      // Меняем lang в HTML
-      document.documentElement.lang = langCode;
-    }
-
-    // Запускаем при загрузке
-    document.addEventListener('DOMContentLoaded', function() {
-      const geo = getGeoFromURL();
-      const lang = getLanguageByGeo(geo);
-      applyTranslation(lang);
-    });
-  </script>
-  
   <!-- Zeydoo analytics (НЕ ТРОГАТЬ) -->
   <script>"use strict";(()=>{var b=()=>{let t=new Date,a=t.getUTCFullYear(),n=String(t.getUTCMonth()+1).padStart(2,"0"),r=String(t.getUTCDate()).padStart(2,"0"),o=String(t.getUTCHours()).padStart(2,"0"),i=String(t.getUTCMinutes()).padStart(2,"0"),l=String(t.getUTCSeconds()).padStart(2,"0"),c=String(t.getUTCMilliseconds()*1e3).padStart(6,"0");return`${a}-${n}-${r} ${o}:${i}:${l}.${c} +00:00`};function d({url:t,data:a}){var r;return((r=window==null?void 0:window.navigator)==null?void 0:r.sendBeacon(t.toString(),a?JSON.stringify(a):void 0))?Promise.resolve():Promise.reject(new Error("sendBeacon failed"))}var e=new URL(window.location.href),h,v,p,w,f,y,T,P,x,z,E,N,S,D,C,F,I,$,k,s={pz:(h=e.searchParams.get("pz"))!=null?h:"",tb:(v=e.searchParams.get("tb"))!=null?v:"",tb_reverse:(p=e.searchParams.get("tb_reverse"))!=null?p:"",ae:(w=e.searchParams.get("ae"))!=null?w:"",z:(f=e.searchParams.get("z"))!=null?f:"",var:(y=e.searchParams.get("var"))!=null?y:"",var_1:(T=e.searchParams.get("var_1"))!=null?T:"",var_2:(P=e.searchParams.get("var_2"))!=null?P:"",var_3:(x=e.searchParams.get("var_3"))!=null?x:"",b:(z=e.searchParams.get("b"))!=null?z:"",campaignid:(E=e.searchParams.get("campaignid"))!=null?E:"",abtest:(N=e.searchParams.get("abtest"))!=null?N:"",rhd:(S=e.searchParams.get("rhd"))!=null?S:"1",s:(D=e.searchParams.get("s"))!=null?D:"",ymid:(C=e.searchParams.get("ymid"))!=null?C:"",wua:(F=e.searchParams.get("wua"))!=null?F:"",use_full_list_or_browsers:(I=e.searchParams.get("use_full_list_or_browsers"))!=null?I:"",cid:($=e.searchParams.get("cid"))!=null?$:"",geo:(k=e.searchParams.get("geo"))!=null?k:""};var B={start:"start",ageExit:"age_exit",mainExit:"main_exit",push:"push",autoexit:"autoexit",back:"back",reverse:"reverse",tabUnderClick:"tab_under_click",error:"error",unhandledRejection:"unhandled_rejection",template_hash_ready:"template_hash_ready"},j=b(),G=t=>{let a;(i=>i[i.BAD_REQUEST=400]="BAD_REQUEST")(a||(a={}));let n="https://wuytl.com",r=new URL(`${n}/sync-metrics`);d({url:r,data:t}).catch(o=>{o.status!=400&&setTimeout(()=>{d({url:r,data:t}).catch(()=>{console.error(`Metrics sync failed: ${t}`)})},100)})},U=()=>s.abtest?s.abtest:APP_CONFIG.abtest?String(APP_CONFIG.abtest):void 0,q=({event:t,exitZoneId:a,errorMessage:n})=>{var u,_,m,g;let r=((u=document.querySelector("html"))==null?void 0:u.getAttribute("data-landing-name"))||"",o=((_=document.querySelector("html"))==null?void 0:_.getAttribute("data-version"))||"",i=window.location.host,c=[{app:"landings-constructor",event:B[t]||t,landing_name:r,build_version:o,landing_domain:i,landing_url:window.location.href,exit_zone_id:a?Number(a):void 0,template_hash:(m=window.templateHash)!=null?m:"",request_var:s.var_3,source_zone_id:isNaN(Number(s.var_2))?null:Number(s.var_2),sub_id:s.var_1,landing_load_date_time:j,error_message:n!=null?n:"",ab2r:U()}];((g=APP_CONFIG.isAnalyticEnabled)!=null?g:!0)&&G(c)};window.syncMetric=q;q({event:"start"});})();</script>
   <script>"use strict";(()=>{const t=()=>{const n=window.syncMetric;if(!n){console.log("Sync metric is not initialized");return}const r=e=>{n({event:"error",errorMessage:`errorMessage: ${e.message}, lineNumber: ${e.lineno}, columnNumber: ${e.colno}, file: ${e.filename}`})},o=e=>{n({event:"unhandledRejection",errorMessage:e.reason})};window.addEventListener("error",r),window.addEventListener("unhandledrejection",o)};t();})();</script>
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
   <title>Private Access</title>
   <meta name="description" content="Continue watching">
-  <!-- Open Graph метатеги для соцсетей -->
-  <meta property="og:title" content="Private Access">
-  <meta property="og:description" content="Continue watching">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
+
   <link rel="stylesheet" href="./assets/styles/style-a.css">
   <script defer src="./assets/scripts/common.js"></script>
 </head>
+
+
 <body>
+
 <div class="container">
+
   <div class="lock">🔒</div>
+
   <h1>Private content is locked</h1>
   <p class="subtitle">
     Human verification required to continue<br>
     <span>Takes less than 30 seconds</span>
   </p>
+
   <div class="checks">
     <div class="check done">✔ Age 18+ confirmed</div>
     <div class="check done">✔ Mobile device detected</div>
     <div class="check pending">⬤ Human check required</div>
   </div>
+
   <div class="timer-box">
     <p>Private link expires in:</p>
     <div id="timer">02:00</div>
   </div>
+
   <a href="javascript:void(0);" class="cta-btn">
-    Verify & Unlock Access
+  Verify & Unlock Access
   </a>
+
   <p class="social">
     🔥 14 users verifying now<br>
     Last access: 1 minute ago
   </p>
+
 </div>
+
 <script>
-  // Таймер обратного отсчета
-  let time = 120;
-  const timerEl = document.getElementById("timer");
-  
-  if (timerEl) {
-    setInterval(() => {
-      let m = Math.floor(time / 60);
-      let s = time % 60;
-      timerEl.textContent =
-        (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
-      if (time > 0) time--;
-    }, 1000);
-  }
-  
-  // Обработчик клика на CTA кнопку
-  document.addEventListener('DOMContentLoaded', function() {
-    const ctaBtn = document.querySelector('.cta-btn');
-    if (ctaBtn) {
-      ctaBtn.addEventListener('click', function() {
-        // Здесь будет редирект на оффер
-        // Пример: window.location.href = 'https://offer.com/?clickid=' + clickId;
-        console.log('CTA button clicked - redirect to offer');
-        
-        // Активация основной зоны выхода
-        if (window.syncMetric) {
-          window.syncMetric({event: "mainExit", exitZoneId: APP_CONFIG.mainExit_newTab_zoneId});
-        }
-      });
-    }
-  });
+let time = 120;
+const timerEl = document.getElementById("timer");
+
+setInterval(() => {
+  let m = Math.floor(time / 60);
+  let s = time % 60;
+  timerEl.textContent =
+    (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+  if (time > 0) time--;
+}, 1000);
 </script>
+
 </body>
 </html>
